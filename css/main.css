@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@font-face {
+  font-family: 'DDC-Reg';
+  src: url('../fonts/DDCHardware-Regular.otf');
+}
+@font-face {
+  font-family: 'DDC-Comp';
+  src: url('../fonts/DDCHardware-Compressed.otf');
+}
+@font-face {
+  font-family: 'DDC-Cond';
+  src: url('../fonts/DDCHardware-Condensed.otf');
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+h1 {
+  display: block;
+  font-family: 'DDC-Reg';
+  font-size: 50px;
+}
+h2 {
+  font-family: 'DDC-Comp';
+  font-size: 36px;
+}
+a {
+  font-family: 'Open Sans';
+  font-weight: 600;
+}
+.nav a {
+  font-size: 18px;
+}
+.nav {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 0px 20px -5px black;
+  display: flex;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.nav .spacer {
+  flex: 1;
+}
+.nav .links a {
+  color: black;
+  display: inline;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.nav .links a:hover {
+  font-size: 20px;
+}
+.poster {
+  box-shadow: inset 0px 0px 25px -5px black;
+  height: 70%;
+  width: 100%;
+}
+.poster svg {
+  width: 100%;
+  height: 100%;
+}
+.poster .cover {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.poster .cover .text {
+  text-align: center;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  padding-top: 60px;
+  position: relative;
+}
