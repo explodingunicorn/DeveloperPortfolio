@@ -1,13 +1,30 @@
 @import 'fonts';
+@import 'helpers';
 @import 'components/nav';
 @import 'components/poster';
+@import 'components/twoColumn';
 
 html, body {
     margin: 0;
     padding: 0;
 }
 
+.router-link-active {
+    color: none;
+    text-decoration: none;
+}
+
+.override {
+    color: black;
+}
+
 .app {
     padding-top: 60px;
     position: relative;
+
+    .container {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

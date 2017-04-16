@@ -4,7 +4,7 @@ var path = require('path');
 var concat = require("gulp-concat");
 
 gulp.task("build", function () {
-    return gulp.src(["./scripts/cactus.js", "./scripts/clouds.js", "./scripts/game.js", "./scripts/trump.js", "./scripts/wall.js", "./scripts/main.js"])
+    return gulp.src(["./scripts/projects.js", "./scripts/graph.js", "./scripts/main.js"])
         .pipe(concat("main.js"))
         .pipe(gulp.dest("./"));
 });

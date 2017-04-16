@@ -29,12 +29,34 @@ h2 {
   font-family: 'DDC-Comp';
   font-size: 36px;
 }
+h3 {
+  font-family: 'DDC-Cond';
+  font-size: 32px;
+}
+p {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
 a {
   font-family: 'Open Sans';
   font-weight: 600;
 }
 .nav a {
   font-size: 18px;
+}
+.mgn-btm-10 {
+  margin-bottom: 10px;
+}
+.mgn-top-10 {
+  margin-top: 10px;
+}
+.mgn-rt-10 {
+  margin-right: 10px;
+}
+.mgn-lft-10 {
+  margin-left: 10px;
 }
 .nav {
   align-items: center;
@@ -62,8 +84,8 @@ a {
   font-size: 20px;
 }
 .poster {
-  box-shadow: inset 0px 0px 25px -5px black;
   height: 70%;
+  position: relative;
   width: 100%;
 }
 .poster svg {
@@ -72,8 +94,10 @@ a {
 }
 .poster .cover {
   align-items: center;
+  box-shadow: inset 0px -5px 20px -10px black;
   display: flex;
   justify-content: center;
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -84,12 +108,36 @@ a {
 .poster .cover .text {
   text-align: center;
 }
+.two-column {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.two-column .column {
+  flex: 1;
+}
+.two-column .gutter {
+  width: 30px;
+}
 html,
 body {
   margin: 0;
   padding: 0;
 }
+.router-link-active {
+  color: none;
+  text-decoration: none;
+}
+.override {
+  color: black;
+}
 .app {
   padding-top: 60px;
   position: relative;
+}
+.app .container {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
 }
