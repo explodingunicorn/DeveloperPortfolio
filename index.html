@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
     </head>
 
@@ -9,17 +10,17 @@
                 <div class="logo">
                     <router-link to="/" class="override"><h2>C.Robinson</h2></router-link>
                 </div>
-                <div class="spacer"></div>
+                <div class="flex-spacer"></div>
                 <div class="links">
                     <a v-on:click="scrollTo('about')">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contacts">Contact</a>
+                    <a v-on:click="scrollTo('projects')">Projects</a>
+                    <a v-on:click="scrollTo('contact')">Contact</a>
                 </div>
             </div>
             
-            <router-view>
             
-            </router-view>
+            <router-view></router-view>
+
         </div>
 
         <template id="home">
@@ -37,45 +38,68 @@
                     <div id="about" class="two-column">
                         <div class="column">
                             <h3 class="mgn-btm-10">A little About Me:</h3>
-                            <p>If you hadn't guessed it already my name is Corey. My work consists of web development, game development, and data visualization. I try to work and experiment in domains that are not fully explored yet. Here you will find many experiments, and projects that I have worked on recently.</p>
+                            <p>If you hadn't guessed it already my name is Corey. My work consists of web development, game development, and data visualization. I try to work and experiment in domains that are not fully explored yet. Here you will find some experiments, and projects that I have worked on recently.</p>
                         </div>
                         <div class="gutter"></div>
                         <div class="column">
-                            <h3 class="mgn-btm-10">Some more stuff</h3>
-                            <p>blah blah blah</p>
+                            <h3 class="mgn-btm-10">Currently working as:</h3>
+                            <p>A researcher @ <a class="pink" href="http://cisl.rpi.edu" target="_blank">The Cognitive & Immersive Systems Lab</a></p>
+                            <p>A developer @ <a class="pink" href="https://empac.rpi.edu" target="_blank">EMPAC</a></p>
                         </div>
                     </div>
-                    <h1>Projects:</h1>
+                    <h1 id="projects">Projects:</h1>
                     <div class="two-column project" v-for="project in projects">
                         <div class="column">
-                            <img src=""/>
+                            <img v-bind:src="'./img/' + project.name + '1.png'"/>
                         </div>
                         <div class="gutter"></div>
                         <div class="column">
                             <h3 class="mgn-btm-10">{{project.name}}</h3>
                             <p>{{project.snippet}}</p>
-                            <router-link v-bind:to="getProjectRoute(project.name)">Go to Project</router-link>
+                            <router-link class="project-link" v-bind:to="getProjectRoute(project.name)">Read More</router-link>
                         </div>
                     </div>
+                    <div class="spacer">
+                    </div>
+                    <h1 id="contact" class="center">Contact</h1>
+                    <div id="contact" class="two-column">
+                        <div class="column right">
+                            <h3>Want to get a hold of me?</h3>
+                        </div>
+                        <div class="gutter"></div>
+                        <div class="column links">
+                            <p><a class="pink big" href="mailto:robinc7@rpi.edu">robinc7@rpi.edu</a></p>
+                            <p><a class="pink big" href="https://github.com/explodingunicorn" target="_blank">Github</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer">
                 </div>
             </div>
         </template>
 
         <template id="project-template">
-            <div v-if="currentProject" class="container mgn-top-10">
-                <h1>{{currentProject.name}}</h1>
-                <div class="two-column">
-                    <div class="column">
-                        <h3>About</h3>
-                        <p>{{currentProject.snippet}}</p>
+            <transition name="fade">
+                <div v-if="currentProject" v-component="project" class="container mgn-top-10 current">
+                    <h1>{{currentProject.name}}</h1>
+                    <div class="two-column">
+                        <div class="column flex-2">
+                            <h3>About</h3>
+                            <p>{{currentProject.paragraph}}</p>
+                            <a class="link-button" v-bind:href="currentProject.link" v-if="currentProject.link" target="_blank">View Project</a>
+                            <a class="repo-button" v-bind:href="currentProject.repo" v-if="currentProject.repo" target="_blank">View Repo</a>
+                        </div>
+                        <div class="gutter"></div>
+                        <div class="column">
+                            <h3>Built with:</h3>
+                            <h4 v-for="tech in currentProject.tech">{{tech}}</h4>
+                        </div>
                     </div>
-                    <div class="gutter"></div>
-                    <div class="column">
-                        <h3>Built with:</h3>
-                        <p>Some stuff</p>
+                    <div class="image-gallery">
+                        <img v-for="n in currentProject.pics" v-bind:src="resolvePic(n)" />
                     </div>
                 </div>
-            </div>
+            </transition>
          </template>
 
         <script src="./reqs/vue.min.js"></script>

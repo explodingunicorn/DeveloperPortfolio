@@ -22,9 +22,59 @@ html, body {
     padding-top: 60px;
     position: relative;
 
+    .current {
+        margin-top: 30px;
+    }
+
     .container {
         width: 60%;
-        margin-right: auto;
-        margin-left: auto;
+        margin-left: 20%;
+    }
+
+    .spacer {
+        height: 100px;
+        width: 100%;
+    }
+
+    .image-gallery {
+        margin-top: 30px;
+
+        img {
+            border: 1px solid black;
+            border-radius: 3px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1.5s;
+}
+
+.fade-leave-active {
+    position: fixed;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
+}
+
+@media only screen and (max-width: 1500px) {
+    .app {
+        .container {
+            margin-left: 10%;
+            width: 80%
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .app {
+        .container {
+            margin-left: 2.5%;
+            width: 95%
+        }
     }
 }

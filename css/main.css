@@ -33,15 +33,48 @@ h3 {
   font-family: 'DDC-Cond';
   font-size: 32px;
 }
+h4 {
+  font-family: 'Open Sans';
+  font-size: 24px;
+}
 p {
   font-family: 'Open Sans';
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
+  margin-bottom: 15px;
+}
+.center {
+  text-align: center;
 }
 a {
   font-family: 'Open Sans';
   font-weight: 600;
+  text-decoration: underline;
+}
+a.pink {
+  color: #ff00ff;
+}
+a.big {
+  font-size: 32px;
+}
+a.link-button {
+  background-color: #ff00ff;
+  color: black;
+  padding: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: right;
+  text-decoration: none;
+}
+a.repo-button {
+  background-color: #00ffff;
+  color: black;
+  padding: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: right;
+  text-decoration: none;
 }
 .nav a {
   font-size: 18px;
@@ -70,7 +103,7 @@ a {
   right: 0;
   z-index: 100;
 }
-.nav .spacer {
+.nav .flex-spacer {
   flex: 1;
 }
 .nav .links a {
@@ -81,7 +114,13 @@ a {
   transition: all .2s;
 }
 .nav .links a:hover {
+  cursor: pointer;
   font-size: 20px;
+}
+@media only screen and (max-width: 900px) {
+  .nav .links {
+    display: none;
+  }
 }
 .poster {
   height: 70%;
@@ -117,8 +156,52 @@ a {
 .two-column .column {
   flex: 1;
 }
+.two-column .column.flex-2 {
+  flex: 2;
+}
+.two-column .column.flex-2 p {
+  margin-bottom: 30px;
+}
+.two-column .column img {
+  border: 1px solid black;
+  border-radius: 3px;
+  height: auto;
+  width: 100%;
+}
+.two-column .column .project-link {
+  color: black;
+  display: inline-block;
+  background-color: #00ffff;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 20px;
+  transition: all .5s;
+}
+.two-column .column .project-link:hover {
+  box-shadow: 0px 0px 10px -1px black;
+}
+.two-column .column.right {
+  text-align: right;
+}
 .two-column .gutter {
-  width: 30px;
+  width: 50px;
+}
+@media only screen and (max-width: 900px) {
+  .two-column {
+    flex-direction: column;
+  }
+  .two-column .gutter {
+    height: 30px;
+  }
+  .two-column .column.right {
+    text-align: center;
+  }
+  .two-column .column.links {
+    text-align: center;
+  }
 }
 html,
 body {
@@ -136,8 +219,47 @@ body {
   padding-top: 60px;
   position: relative;
 }
+.app .current {
+  margin-top: 30px;
+}
 .app .container {
   width: 60%;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 20%;
+}
+.app .spacer {
+  height: 100px;
+  width: 100%;
+}
+.app .image-gallery {
+  margin-top: 30px;
+}
+.app .image-gallery img {
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s;
+}
+.fade-leave-active {
+  position: fixed;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+@media only screen and (max-width: 1500px) {
+  .app .container {
+    margin-left: 10%;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .app .container {
+    margin-left: 2.5%;
+    width: 95%;
+  }
 }

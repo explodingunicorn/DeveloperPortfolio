@@ -40,9 +40,6 @@ var Graph = function() {
             var xDif = (centerX - x0)/4;
             var yDif = (centerY - y0)/4;
             var yPercentage =  y0/height;
-            console.log('rgba(' + 255*yPercentage + ',' + (255*(1-yPercentage)) + '255, .8)');
-            //255, 0, 255
-            //0, 255, 255
 
             for(var i = 0; i < division+1; i++) {
                 for(var j = 0; j < heightDivision + 2; j++) {

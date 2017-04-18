@@ -22,7 +22,14 @@ var project = {
             currentProject: '',
         }
     },
+    methods: {
+        resolvePic: function(n) {
+            console.log(this.currentProject);
+            return './img/' + this.currentProject.name + (n + '.png');
+        },
+    },
     mounted: function() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
         for(var i = 0; i < this.projects.length; i++) {
             if (this.projects[i].name.toLowerCase() === this.$route.params.id.toLowerCase()) {
                 this.currentProject = this.projects[i];
@@ -52,7 +59,7 @@ var app = new Vue({
         scrollTo: function(section) {
             var rect = document.getElementById(section).getBoundingClientRect();
             console.log(rect.top);
-            window.scrollTo(0, rect.top-70);
+            window.scrollTo(0, window.pageYOffset + rect.top-70);
         }
     }
 })

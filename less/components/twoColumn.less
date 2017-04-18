@@ -6,9 +6,65 @@
 
     .column {
         flex: 1;
+
+        &.flex-2 {
+            flex: 2;
+
+            p {
+                margin-bottom: 30px;
+            }
+        }
+
+        img {
+            border: 1px solid black;
+            border-radius: 3px;
+            height: auto;
+            width: 100%;
+        }
+
+        .project-link {
+            color: black;
+            display: inline-block;
+            background-color: rgb(0, 255, 255);
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px;
+            margin-top: 20px;
+            transition: all .5s;
+
+            &:hover {
+                box-shadow: 0px 0px 10px -1px black;
+            }
+        }
+
+        &.right {
+            text-align: right;
+        }
     }
 
     .gutter {
-        width: 30px;
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .two-column {
+        flex-direction: column;
+
+        .gutter {
+            height: 30px;
+        }
+
+        .column {
+            &.right {
+                text-align: center;
+            }
+
+            &.links {
+                text-align: center;
+            }
+        }
     }
 }
