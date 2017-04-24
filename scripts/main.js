@@ -24,11 +24,11 @@ var project = {
     },
     methods: {
         resolvePic: function(n) {
-            console.log(this.currentProject);
             return './img/' + this.currentProject.name + (n + '.png');
         },
     },
     mounted: function() {
+        this.$parent.secondNav = true;
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         for(var i = 0; i < this.projects.length; i++) {
             if (this.projects[i].name.toLowerCase() === this.$route.params.id.toLowerCase()) {
@@ -53,12 +53,21 @@ var app = new Vue({
     el: '.app',
     router: router,
     data: {
-        projects: _PROJECTS
+        projects: _PROJECTS,
+        secondNav: false
+    },
+    watch: {
+        $route: function() {
+            console.log(this.$route);
+            if(this.$route.path === '/') {
+                this.secondNav = false;
+                console.log(this.secondNav);
+            }
+        }
     },
     methods: {
         scrollTo: function(section) {
             var rect = document.getElementById(section).getBoundingClientRect();
-            console.log(rect.top);
             window.scrollTo(0, window.pageYOffset + rect.top-70);
         }
     }

@@ -6,7 +6,12 @@
 
     <body>
         <div class="app">
-            <div class="nav">
+            <div class="nav center" v-if="secondNav">
+                <div class="logo">
+                    <router-link to="/" class="override"><h2>C.Robinson</h2></router-link>
+                </div>
+            </div>
+            <div class="nav" v-if="!secondNav">
                 <div class="logo">
                     <router-link to="/" class="override"><h2>C.Robinson</h2></router-link>
                 </div>
@@ -56,7 +61,7 @@
                         <div class="column">
                             <h3 class="mgn-btm-10">{{project.name}}</h3>
                             <p>{{project.snippet}}</p>
-                            <router-link class="project-link" v-bind:to="getProjectRoute(project.name)">Read More</router-link>
+                            <router-link class="project-link" v-bind:to="getProjectRoute(project.name)" v-on:click="secondNav=true; console.log(secondNav);">Read More</router-link>
                         </div>
                     </div>
                     <div class="spacer">
@@ -101,10 +106,9 @@
                 </div>
             </transition>
          </template>
-
-        <script src="./reqs/vue.min.js"></script>
-        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
-        <script src="./main.js"></script>
     </body>
+    <script src="./reqs/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.4.0/vue-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>
+    <script src="./main.js"></script>
 </html>
