@@ -6,7 +6,7 @@ var _PROJECTS = [
         paragraph: "This game spawned from my interest in fake news, and the recent election. When creating this game I was thinking about the mass manipulation of users on social media. Everyone likes to think that they know what they are doing, and who they are supporting on social media. But realistically, popular social media users are most likely manipulating their fan bases in some way for their own gain. This game aims to uncover this problem. You play as a regular social media user on a website called Headlinr. On Headlinr users can only write about trending topics, and they can only write 10 words at most. The goal of the game is to manipulate your connections to get the maximum amount of likes on your headlines. The game can run infinitely, with upgrades that you unlock along the way. This game is still in development, but will be finished soon. You can play the alpha by cloning my repo and running it locally.",
         tech: ['Electron', 'Vue', 'RiTa.js'],
         repo: 'https://github.com/explodingunicorn/headlinr',
-        pics: 2
+        pics: 5
     },
     {
         name: 'Vizzy',
