@@ -1,19 +1,16 @@
 {
-  "name": "developerportfolio",
+  "name": "developerportfolioshell",
   "version": "1.0.0",
-  "description": "My portfolio",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "Corey Robinson",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.2.6"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-less": "^3.3.0"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.3"
   }
 }
