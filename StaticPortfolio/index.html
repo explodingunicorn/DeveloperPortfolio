@@ -62,7 +62,22 @@
                         <div class="column">
                             <h3 class="mgn-btm-10">{{project.name}}</h3>
                             <p>{{project.snippet}}</p>
-                            <router-link class="project-link" v-bind:to="getProjectRoute(project.name)" v-on:click="secondNav=true; console.log(secondNav);">Read More</router-link>
+                            <router-link class="project-link" v-bind:to="getProjectRoute(project.name)">View Project</router-link>
+                        </div>
+                    </div>
+                    <div class="spacer">
+                    </div>
+                    <h1 id="blogs">Blogs:</h1>
+                    <div v-if="!blogs" class="loading"></div>
+                    <div v-if="blogs" class="two-column" v-for="i in blogAmt">
+                        <div class="column">
+                            <img v-bind:src="'./img' + blogs[i-1].img"/>
+                        </div>
+                        <div class="gutter"></div>
+                        <div class="column">
+                            <h3 class="mgn-btm-10">{{blogs[i-1].title}}</h3>
+                            <div v-html="blogs[i-1].preview"></div>
+                            <router-link class="project-link pink" v-bind:to="'/blog/' + blogs[i-1].file">Read More</router-link>
                         </div>
                     </div>
                     <div class="spacer">
@@ -86,7 +101,7 @@
 
         <template id="project-template">
             <transition name="fade">
-                <div v-if="currentProject" v-component="project" class="container mgn-top-10 current">
+                <div v-if="currentProject" class="container mgn-top-10 current">
                     <h1>{{currentProject.name}}</h1>
                     <div class="two-column">
                         <div class="column flex-2">
@@ -104,6 +119,22 @@
                     <div class="image-gallery">
                         <img v-for="n in currentProject.pics" v-bind:src="resolvePic(n)" />
                     </div>
+                </div>
+            </transition>
+         </template>
+
+         <template id="blog-template">
+            <transition name="fade">
+                <div>
+                    <div v-if="blog" class="poster" v-bind:style="{backgroundImage: 'url(img' + blog.img + ')'}">
+                    </div>
+                    <div v-if="blog" class="container-small mgn-top-10 current">
+                        <h2>{{blog.title}}</h2>
+                        <h2 class="mgn-btm-10">{{blog.month}}/{{blog.day}}/{{blog.year}}</h2>
+                        <div v-html="blog.preview">
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
                 </div>
             </transition>
          </template>

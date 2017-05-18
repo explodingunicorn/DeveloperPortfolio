@@ -1,8 +1,8 @@
 {
-    "title": "First Blog Post - How I created my blog",
+    "title": "First Blog Post - How I created my website, and blog",
     "year": 2017,
     "month": 5,
     "day": 17,
-    "image": "",
-    "preview": "<p>I had already created my website a while before I decided I wanted a blog. It didn't make any sense to me to try and redo my whole website to write a few things once in a while. I decided to improvise"
+    "img": "/blogs/helloWorld.png",
+    "preview": "<p>I had already created my website a while before I decided I wanted a blog. It didn't make any sense to me to try and redo my whole website to write a few things once in a while. I decided to improvise."
 }

@@ -15,7 +15,7 @@ for (var i = 0; i < files.length; i++) {
     obj.day = post.day;
     obj.preview = post.preview;
     obj.img = post.img;
-    obj.file = files[i];
+    obj.file = files[i].replace('.json', '');
     posts.push(obj);
 }
 

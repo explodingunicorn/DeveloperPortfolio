@@ -76,6 +76,25 @@ a.repo-button {
   text-align: right;
   text-decoration: none;
 }
+.project-link {
+  color: black;
+  display: inline-block;
+  background-color: #00ffff;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 20px;
+  transition: all .5s;
+}
+.project-link.pink {
+  background-color: #ff00ff;
+  color: black;
+}
+.project-link:hover {
+  box-shadow: 0px 0px 10px -1px black;
+}
 .nav a {
   font-size: 18px;
 }
@@ -126,6 +145,9 @@ a.repo-button {
   }
 }
 .poster {
+  background-size: cover;
+  background-position: center center;
+  box-shadow: inset 0px -5px 20px -10px black;
   height: 70%;
   position: relative;
   width: 100%;
@@ -136,7 +158,6 @@ a.repo-button {
 }
 .poster .cover {
   align-items: center;
-  box-shadow: inset 0px -5px 20px -10px black;
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -170,21 +191,6 @@ a.repo-button {
   border-radius: 3px;
   height: auto;
   width: 100%;
-}
-.two-column .column .project-link {
-  color: black;
-  display: inline-block;
-  background-color: #00ffff;
-  font-family: 'Open Sans';
-  font-weight: 600;
-  font-size: 20px;
-  text-decoration: none;
-  padding: 10px;
-  margin-top: 20px;
-  transition: all .5s;
-}
-.two-column .column .project-link:hover {
-  box-shadow: 0px 0px 10px -1px black;
 }
 .two-column .column.right {
   text-align: right;
@@ -229,6 +235,10 @@ body {
   width: 60%;
   margin-left: 20%;
 }
+.app .container-small {
+  width: 50%;
+  margin-left: 25%;
+}
 .app .spacer {
   height: 100px;
   width: 100%;
@@ -261,7 +271,8 @@ body {
   }
 }
 @media only screen and (max-width: 1200px) {
-  .app .container {
+  .app .container,
+  .app .container-small {
     margin-left: 2.5%;
     width: 95%;
   }
