@@ -20,6 +20,7 @@
                 <div class="links">
                     <a v-on:click="scrollTo('about')">About</a>
                     <a v-on:click="scrollTo('projects')">Projects</a>
+                    <a v-on:click="scrollTo('blogs')">Blog</a>
                     <a v-on:click="scrollTo('contact')">Contact</a>
                 </div>
             </div>
@@ -131,7 +132,7 @@
                     <div v-if="blog" class="container-small mgn-top-10 current">
                         <h2>{{blog.title}}</h2>
                         <h2 class="mgn-btm-10">{{blog.month}}/{{blog.day}}/{{blog.year}}</h2>
-                        <div v-html="blog.preview">
+                        <div v-for="item in blog.post" v-html="item">
                         </div>
                     </div>
                     <div class="spacer"></div>

@@ -4,5 +4,9 @@
     "month": 5,
     "day": 17,
     "img": "/blogs/helloWorld.png",
-    "preview": "<p>I had already created my website a while before I decided I wanted a blog. It didn't make any sense to me to try and redo my whole website to write a few things once in a while. I decided to improvise."
+    "preview": "<p>I had already created my website a while before I decided I wanted a blog. It didn't make any sense to me to try and redo my whole website to write a few things once in a while. I decided to improvise.</p>",
+    "post": [
+        "<p>I've learned so much over the past couple of years. Actually scratch that. I've learned so much over the past semester, and I feel that I have finally reached the point where I can create quality work. So as my semester came to an end, and my eventual job search is looming in the distance, I decided it was finally time to create a real portfolio.</p>",
+        "<p>When I say real, I mean a complete system. A project that allows me to run a few commands, and bada-boom, my website is automatically updated. In the past my portfolio usually consisted of a bunch of html files strung together, and it was a bit complicated trying to update the site. Eventually I would get busy doing other things and just forget about my site altogether. But this time would be different! This time I was going to make something that I was proud of, and that something is the very thing you are on right now. Now you're probably asking yourself how I got here. Well if you weren't I'm going to tell you anyways because this is my blog and I do what I want!</p>"
+    ]
 }
