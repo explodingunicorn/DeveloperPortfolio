@@ -18,8 +18,7 @@ for (var i = 0; i < files.length; i++) {
     obj.file = files[i].replace('.json', '');
     posts.push(obj);
 }
-
-console.log(posts);
 var path = __dirname + '/scripts/blogs.json';
 
 fs.writeFileSync(path, JSON.stringify(posts));
+console.log('Posts aggregated!');
